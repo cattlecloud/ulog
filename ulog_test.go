@@ -13,6 +13,8 @@ func Test_New(t *testing.T) {
 	log.I.Fmt("this is %s", "info")
 	log.D.Fmt("this is %s", "debug")
 	log.T.Fmt("should not see %s", "trace")
+
+	t.Log("complete")
 }
 
 func Test_SetLevel(t *testing.T) {
@@ -60,4 +62,6 @@ func Test_SetLevel(t *testing.T) {
 		log.D.Fmt("this is debug")
 		log.T.Fmt("this is trace")
 	})
+
+	t.Log("complete")
 }
