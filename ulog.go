@@ -1,3 +1,6 @@
+// Copyright (c) NOXIDE.LOL
+// SPDX-License-Identifier: BSD-3-Clause
+
 // Package ulog provides a lightweight and efficient leveled logging library for Go.
 package ulog
 
