@@ -1,6 +1,10 @@
-# ulog [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+# ulog
 
-ulog is a simple and efficient level logging library for Go
+[![Go Reference](https://pkg.go.dev/badge/noxide.lol/go/ulog.svg)](https://pkg.go.dev/noxide.lol/go/ulog)
+[![License](https://img.shields.io/github/license/noxideproject/ulog?color=7C00D8&style=flat-square&label=License)](https://github.com/noxideproject/ulog/blob/main/LICENSE)
+[![Build](https://img.shields.io/github/actions/workflow/status/noxideproject/ulog/ci.yaml?style=flat-square&color=0FAA07&label=Tests)](https://github.com/noxideproject/ulog/actions/workflows/ci.yaml)
+
+`ulog` is a simple and efficient level logging library for Go
 
 ### Getting Started
 
@@ -23,4 +27,4 @@ log.T.Fmt("the level is %s", "trace")
 
 ### License
 
-The `noxide.lol/go/ulog` module is open source under the [BSD](LICENSE) license.
+The `noxide.lol/go/ulog` module is open source under the [BSD-3-Clause](LICENSE) license.
