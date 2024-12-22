@@ -1,4 +1,4 @@
-// Copyright (c) NOXIDE.LOL
+// Copyright (c) CattleCloud LLC
 // SPDX-License-Identifier: BSD-3-Clause
 
 // Package ulog provides a lightweight and efficient leveled logging library for Go.

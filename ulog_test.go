@@ -1,4 +1,4 @@
-// Copyright (c) NOXIDE.LOL
+// Copyright (c) CattleCloud LLC
 // SPDX-License-Identifier: BSD-3-Clause
 
 package ulog
@@ -6,6 +6,8 @@ package ulog
 import "testing"
 
 func Test_New(t *testing.T) {
+	t.Parallel()
+
 	log := New("test")
 
 	log.E.Fmt("this is %s", "error")
@@ -18,6 +20,8 @@ func Test_New(t *testing.T) {
 }
 
 func Test_SetLevel(t *testing.T) {
+	t.Parallel()
+
 	t.Run("error", func(_ *testing.T) {
 		log := New("test-error", SetLevel(Error))
 		log.E.Fmt("this is error")
