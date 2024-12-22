@@ -1,3 +1,3 @@
-module noxide.lol/go/ulog
+module cattlecloud.net/go/ulog
 
-go 1.21
+go 1.23

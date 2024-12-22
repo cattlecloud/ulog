@@ -1,5 +1,12 @@
 name: Run CI Tests
-on: [pull_request]
+on:
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  push:
+    branches:
+      - 'main'
 jobs:
   run-copywrite:
     timeout-minutes: 5
@@ -11,23 +18,19 @@ jobs:
         run: |
           copywrite --config .github/workflows/scripts/copywrite.hcl \
             headers --spdx "BSD-3-Clause" --plan
-  run-lint:
-    timeout-minutes: 5
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: golangci/golangci-lint-action@v6
-        with:
-          version: v1.59.1
-          skip-cache: true
   run-tests:
-    timeout-minutes: 5
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v2
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
+          cache-dependency-path: '**/go.sum'
+      - name: Show System
+        run: |
+          uname -a
+          just sysinfo
       - name: Run Go Test
         run: |
-          make test
+          just init tidy lint test
