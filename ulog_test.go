@@ -69,3 +69,12 @@ func Test_SetLevel(t *testing.T) {
 
 	t.Log("complete")
 }
+
+func Test_SetNoTimestamp(t *testing.T) {
+	t.Parallel()
+
+	t.Run("shorten", func(_ *testing.T) {
+		log := New("test-timestamp", SetNoTimestamp())
+		log.I.Fmt("no timestamp here")
+	})
+}
