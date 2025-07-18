@@ -25,6 +25,22 @@ log.D.Fmt("the level is %s", "debug")
 log.T.Fmt("the level is %s", "trace")
 ```
 
+### Exclude timestamp
+
+When running under systemd it is nice to not include the redundant timestamp
+directly from the logging package (since journald will already insert one). To
+exclude the timestamp simply set the `ULOG_NOTIMESTAMP` environment variable
+to `true`.
+
+e.g. in a systemd unit file
+
+```
+[Service]
+# ...
+Environment="ULOG_NOTIMESTAMP=true"
+```
+
+
 ### License
 
 The `cattlecloud.net/go/ulog` module is open source under the [BSD-3-Clause](LICENSE) license.
