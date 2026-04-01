@@ -18,13 +18,6 @@ tidy:
 test:
     go test -v -race -count=1 ./...
 
-# ensure copywrite headers present on source files
-[group('lint')]
-copywrite:
-    copywrite \
-        --config {{scripts}}/copywrite.hcl headers \
-        --spdx "BSD-3-Clause"
-
 # apply go vet command on source tree
 [group('lint')]
 vet:
@@ -43,5 +36,5 @@ lint: vet
 # locally install build dependencies
 [group('build')]
 init:
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.2
+    go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.11.4
 
